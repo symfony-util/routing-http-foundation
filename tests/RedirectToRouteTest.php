@@ -10,16 +10,16 @@
  */
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute;
 
-// use SymfonyUtil\Component\HttpFoundation\ResponseParameters; // used in string use ::class in php 7.1 symfony 4.0 version
+// used in string use ::class in php 7.1 symfony 4.0 version
+// use Symfony\Component\HttpFoundation\RedirectResponse;
+// use Symfony\Component\HttpFoundation\Response;
+// use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
 
 /**
  * @covers \SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute
