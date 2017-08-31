@@ -16,7 +16,7 @@ namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\RouterInterface;
 use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
-use SymfonyUtil\Component\HttpFoundation\ControllerModel\ReRouteInterface;
+use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
 
 class RedirectToRoute implements ReRouteControllerModelInterface
 {
