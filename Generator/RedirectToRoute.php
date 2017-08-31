@@ -10,17 +10,18 @@
  */
 
 namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
+// Similar namespace in Symfony
+// https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
 
-// use Symfony\Component\HttpFoundation\Request;
-// use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class RedirectToRoute // implements ControllerModelInterface
+class RedirectToRoute implements ReRouteControllerModelInterface
 {
-    // protected $response;
+    protected $router;
 
-    public function __construct(Response $response = null)
+    public function __construct()
     {
-        // $this->response = $response;
+        $this->router = $router;
     }
 
     /**
@@ -38,3 +39,5 @@ class RedirectToRoute // implements ControllerModelInterface
         return new ResponseParameters([], RedirectResponse($this->router->generate($route, $parameters)));
     }
 }
+
+// Inspired from https://github.com/symfony/symfony/blob/v3.3.8/src/Symfony/Bundle/FrameworkBundle/Controller/ControllerTrait.php
