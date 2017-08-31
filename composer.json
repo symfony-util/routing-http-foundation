@@ -1,0 +1,30 @@
+{
+    "name": "symfony-util/routing-http-foundation",
+    "description": "RedirectToRoute object version of Symfony\Bundle\FrameworkBundle\Controller\ControllerTrait",
+    "keywords": ["controller", "symfony", "snowyowl"],
+    "homepage": "https://github.com/symfony-util/routing-http-foundation",
+    "license": "ISC",
+    "authors": [
+        {"name": "Jean-bernard Addor"},
+        {"name": "Community", "homepage": "https://github.com/symfony-util/routing-http-foundation"}
+    ],
+    "require": {
+        "symfony/http-foundation": "^2.0 || ^3.0 || ^4.0",
+        "symfony/routing": "^2.0 || ^3.0 || ^4.0",
+        "symfony/controller-model-using-http-foundation": "^0.1.0@dev"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+        "symfony-util/controller-using-templating-http-foundation-symfony-model": "A model based controller"
+    },
+    "autoload": {
+        "psr-4": { "SymfonyUtil\\Component\\RoutingHttpFoundation\\": "src" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
+
