@@ -1,6 +1,6 @@
 {
     "name": "symfony-util/routing-http-foundation",
-    "description": "RedirectToRoute object version of Symfony\Bundle\FrameworkBundle\Controller\ControllerTrait",
+    "description": "RedirectToRoute object version of Symfony Bundle FrameworkBundle Controller ControllerTrait",
     "keywords": ["controller", "symfony", "snowyowl"],
     "homepage": "https://github.com/symfony-util/routing-http-foundation",
     "license": "ISC",
