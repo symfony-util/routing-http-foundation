@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 use SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute;
 
@@ -30,7 +31,7 @@ final class RedirectToRouteTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute',
-            new RedirectToRoute(new UrlGenerator(new RouteCollectionBuilder(), new RequestContext()))
+            new RedirectToRoute(new UrlGenerator(new RouteCollection(), new RequestContext()))
         );
     }
 
@@ -41,7 +42,7 @@ final class RedirectToRouteTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
-            (new RedirectToRoute(new UrlGenerator($routes, new RequestContext())))->__invoke('index')
+            (new RedirectToRoute(new UrlGenerator($routes->build(), new RequestContext())))->__invoke('index')
         );
     }
 
@@ -50,7 +51,7 @@ final class RedirectToRouteTest extends TestCase
         $example = '/index';
         $routes = new RouteCollectionBuilder();
         $routes->add($example, '', 'index');
-        $responseParameters = (new RedirectToRoute(new UrlGenerator($routes, new RequestContext())))->__invoke('index');
+        $responseParameters = (new RedirectToRoute(new UrlGenerator($routes->build(), new RequestContext())))->__invoke('index');
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
