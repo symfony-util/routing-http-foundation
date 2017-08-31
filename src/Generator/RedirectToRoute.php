@@ -39,7 +39,7 @@ class RedirectToRoute implements ReRouteControllerModelInterface
      */
     public function __invoke($route, $parameters = [])
     {
-        return new ResponseParameters([], RedirectResponse($this->urlGenerator->generate($route, $parameters)));
+        return new ResponseParameters([], new RedirectResponse($this->urlGenerator->generate($route, $parameters)));
     }
 }
 
