@@ -28,14 +28,14 @@ class RedirectToRoute implements ReRouteControllerModelInterface
     }
 
     /**
-     * 
+     * Returns ResponseParameters to the given route with the given parameters.
      *
      * @param string $route         The name of the route
      * @param mixed  $parameters    An array of parameters
      *
-     * @return 
+     * @return ResponseParameters 
      *
-     * @see Interface
+     * @see Interface ReRouteControllerModelInterface
      */
     public function __invoke($route, $parameters = array())
     {
