@@ -13,6 +13,9 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\RouteCollectionBuilder;
 use SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute;
 
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters; // used in string use ::class in php 7.1 symfony 4.0 version
@@ -27,23 +30,27 @@ final class RedirectToRouteTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\RoutingHttpFoundation\Generator\RedirectToRoute',
-            new RedirectToRoute()
+            new RedirectToRoute(new UrlGenerator(new RouteCollectionBuilder(), RequestContext()))
         );
     }
 
     public function testReturnsResponseParameters()
     {
+        $routes = new RouteCollectionBuilder();
+        $routes->add('/', '', 'index');
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
-            (new RedirectToRoute())->__invoke('index')
+            (new RedirectToRoute(new UrlGenerator($routes, RequestContext())))->__invoke('index')
         );
     }
 
     public function testRedirectResponseReturnsUrl()
     {
-        $example = 'http://example.org/';
-        $responseParameters = (new NullControllerModel(new RedirectResponse($example)))->__invoke();
+        $example = '/index';
+        $routes = new RouteCollectionBuilder();
+        $routes->add($example, '', 'index');
+        $responseParameters = (new RedirectToRoute(new UrlGenerator($routes, RequestContext())))->__invoke('index');
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'SymfonyUtil\Component\HttpFoundation\ResponseParameters',
@@ -53,6 +60,11 @@ final class RedirectToRouteTest extends TestCase
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'Symfony\Component\HttpFoundation\Response',
+            $response
+        );
+        $this->assertInstanceOf(
+            // ::class, // 5.4 < php
+            'Symfony\Component\HttpFoundation\RedirectResponse',
             $response
         );
         $url = $response->getTargetUrl();
