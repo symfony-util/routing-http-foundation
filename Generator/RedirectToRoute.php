@@ -14,12 +14,15 @@ namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Routing\RouterInterface;
+use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
+use SymfonyUtil\Component\HttpFoundation\ControllerModel\ReRouteInterface;
 
 class RedirectToRoute implements ReRouteControllerModelInterface
 {
     protected $router;
 
-    public function __construct()
+    public function __construct(RouterInterface $router)
     {
         $this->router = $router;
     }
