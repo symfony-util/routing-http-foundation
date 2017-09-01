@@ -15,6 +15,7 @@ namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
 // https://github.com/symfony/symfony/tree/v3.3.8/src/Symfony/Component/Routing/Generator
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
 use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
