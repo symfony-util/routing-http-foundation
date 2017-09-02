@@ -21,7 +21,7 @@ use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
 
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
 
-class RedirectToRoute implements ReRouteControllerModelInterface
+class RedirectToRoute implements ReRouteInterface
 {
     protected $router;
 
