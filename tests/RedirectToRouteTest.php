@@ -35,7 +35,7 @@ final class RedirectToRouteTest extends TestCase
         );
     }
 
-    public function testCanBeCreated()
+    public function testCanBeCreatedAsInterface()
     {
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
