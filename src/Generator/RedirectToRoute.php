@@ -23,7 +23,7 @@ use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
 
 class RedirectToRoute implements ReRouteInterface
 {
-    protected $router;
+    protected $urlGenerator;
 
     public function __construct(UrlGeneratorInterface $urlGenerator)
     {
