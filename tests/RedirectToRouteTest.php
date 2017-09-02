@@ -46,21 +46,23 @@ final class RedirectToRouteTest extends TestCase
 
     public function testReturnsResponse()
     {
-        $routes = new RouteCollectionBuilder();
-        $routes->add('/', '', 'index');
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'Symfony\Component\HttpFoundation\Response',
-            (new RedirectToRoute(new UrlGenerator($routes->build(), new RequestContext())))->__invoke('index')
+            (new RedirectToRoute(new UrlGenerator(
+                (new RouteCollectionBuilder())->addRoute(new Route('/'), 'index')->build(),
+                new RequestContext()
+            )))->__invoke('index')
         );
     }
 
     public function testRedirectResponseReturnsUrl()
     {
         $example = '/index';
-        $routes = new RouteCollectionBuilder();
-        $routes->add($example, '', 'index');
-        $response = (new RedirectToRoute(new UrlGenerator($routes->build(), new RequestContext())))->__invoke('index');
+        $response = (new RedirectToRoute(new UrlGenerator(
+            (new RouteCollectionBuilder())->addRoute(new Route($example), 'index')->build(),
+            new RequestContext()
+        )))->__invoke('index');
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
             'Symfony\Component\HttpFoundation\Response',
