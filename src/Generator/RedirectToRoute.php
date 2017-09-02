@@ -17,7 +17,7 @@ namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface;
+use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
 
 // use SymfonyUtil\Component\HttpFoundation\ResponseParameters;
 
