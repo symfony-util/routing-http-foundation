@@ -40,7 +40,7 @@ final class RedirectToRouteTest extends TestCase
     {
         $this->assertInstanceOf(
             // ::class, // 5.4 < php
-            'SymfonyUtil\Component\HttpFoundation\ReRouteControllerModelInterface',
+            'SymfonyUtil\Component\HttpFoundation\ReRouteInterface',
             new RedirectToRoute(new UrlGenerator(new RouteCollection(), new RequestContext()))
         );
     }
