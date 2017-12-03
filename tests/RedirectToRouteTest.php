@@ -45,6 +45,9 @@ final class RedirectToRouteTest extends TestCase
         );
     }
 
+    /**
+     * @requires function RouteCollectionBuilder::addRoute
+     */
     public function testReturnsResponse()
     {
         $this->assertInstanceOf(
@@ -57,6 +60,9 @@ final class RedirectToRouteTest extends TestCase
         );
     }
 
+    /**
+     * @requires function RouteCollectionBuilder::addRoute
+     */
     public function testRedirectResponseReturnsUrl()
     {
         $example = '/index';
