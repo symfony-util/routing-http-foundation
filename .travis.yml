@@ -79,7 +79,7 @@ before_install:
 - if [[ -v SYMFONY_LTS ]]; then composer require symfony/lts:${SYMFONY_LTS} --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
 
 - composer global require --dev friendsofphp/php-cs-fixer:">=1.12" || true
-- composer global require --dev phpstan/phpstan-phpunit || composer global require --dev phpunit/phpunit
+- composer global require --dev phpstan/phpstan-phpunit || composer global require --dev phpunit/phpunit:">=4"
 - composer global require --dev sensiolabs/security-checker || composer global require --dev sensiolabs/security-checker:^3.0
 
 install:
