@@ -57,7 +57,7 @@ matrix:
   - env:
     - SYMFONY_VERSION="2.7.*" # https://github.com/symfony/symfony/issues/26315
   - env:
-- SYMFONY_VERSION="2.3.*"
+    - SYMFONY_VERSION="2.3.*"
 
 before_install:
 - echo $PHPUNIT
