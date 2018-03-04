@@ -1,8 +1,9 @@
 # routing-http-foundation
 RedirectToRoute object version of Symfony\Bundle\FrameworkBundle\Controller\ControllerTrait
+
+[![PHPPackages Rank](https://phppackages.org/p/symfony-util/routing-http-foundation/badge/rank.svg)](https://phppackages.org/p/symfony-util/routing-http-foundation)
+[![Monthly Downloads](https://poser.pugx.org/symfony-util/routing-http-foundation/d/monthly)](https://packagist.org/packages/symfony-util/routing-http-foundation)
 <!---
-[![PHPPackages Rank](https://phppackages.org/p/symfony-util/controller-model-using-http-foundation/badge/rank.svg)](https://phppackages.org/p/symfony-util/controller-model-using-http-foundation)
-[![Monthly Downloads](https://poser.pugx.org/symfony-util/controller-model-using-http-foundation/d/monthly)](https://packagist.org/packages/symfony-util/controller-model-using-http-foundation)
 [![PHPPackages Referenced By](https://phppackages.org/p/symfony-util/controller-model-using-http-foundation/badge/referenced-by.svg)](https://phppackages.org/p/symfony-util/controller-model-using-http-foundation)
 [![Tested PHP Versions](https://php-eye.com/badge/symfony-util/controller-model-using-http-foundation/tested.svg)](https://php-eye.com/package/symfony-util/controller-model-using-http-foundation)
 [![Dependency Status](https://www.versioneye.com/php/symfony-util:controller-model-using-http-foundation/badge)](https://www.versioneye.com/php/symfony-util:controller-model-using-http-foundation)
