@@ -16,6 +16,7 @@ namespace SymfonyUtil\Component\RoutingHttpFoundation\Generator;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use SymfonyUtil\Component\HttpFoundation\ReRouteInterface;
 
@@ -33,18 +34,18 @@ class RedirectToRoute implements ReRouteInterface
     /**
      * Returns ResponseParameters to the given route with the given parameters.
      *
-     * @param string $route      The name of the route
+     * @param string $routeName  The name of the route
      * @param mixed  $parameters An array of parameters
      *
      * @return Response
      *
      * @see Interface ReRouteControllerModelInterface
      */
-    public function __invoke($route, $parameters = [], Request $request = null)
+    public function __invoke($routeName, $parameters = [], Request $request = null)
     {
         // return new ResponseParameters([], new RedirectResponse($this->urlGenerator->generate($route, $parameters)));
 
-        return new RedirectResponse($this->urlGenerator->generate($route, $parameters));
+        return new RedirectResponse($this->urlGenerator->generate($routeName, $parameters));
     }
 }
 
