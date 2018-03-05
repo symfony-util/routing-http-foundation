@@ -98,6 +98,7 @@ matrix:
     - SYMFONY_VERSION="2.3.*"
 
 before_install:
+- echo $COMPOSER_NO_INTERACTION
 - echo $PHPUNIT
 - pwd
 - echo $HOME
@@ -111,10 +112,10 @@ before_install:
 - if [[ -f /tmp/xdebug.ini ]]; then xdebug_php='-c /tmp/xdebug.ini'; fi
 - install --directory .travis/bin
 
-- if [[ -v SYMFONY_VERSION ]]; then composer global require symfony/symfony:${SYMFONY_VERSION} --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
-- if [[ -v SYMFONY_VERSION ]]; then composer require symfony/symfony:${SYMFONY_VERSION} --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
-- if [[ -v SYMFONY_LTS ]]; then composer global require symfony/lts:${SYMFONY_LTS} --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
-- if [[ -v SYMFONY_LTS ]]; then composer require symfony/lts:${SYMFONY_LTS} --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
+- if [[ -v SYMFONY_VERSION ]]; then composer global require symfony/symfony:${SYMFONY_VERSION} --prefer-dist --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
+- if [[ -v SYMFONY_VERSION ]]; then composer require symfony/symfony:${SYMFONY_VERSION} --prefer-dist --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
+- if [[ -v SYMFONY_LTS ]]; then composer global require symfony/lts:${SYMFONY_LTS} --prefer-dist --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
+- if [[ -v SYMFONY_LTS ]]; then composer require symfony/lts:${SYMFONY_LTS} --prefer-dist --no-scripts --no-progress --no-suggest --optimize-autoloader --apcu-autoloader; fi
 
 - composer global require --dev friendsofphp/php-cs-fixer:">=1.12" || true
 - composer global require --dev phpstan/phpstan-phpunit || composer global require --dev phpunit/phpunit:">=4"
