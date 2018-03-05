@@ -25,6 +25,20 @@
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "symfony/symfony"
+        },
+        {
+            "type": "git",
+            "url": "symfony/http-foundation"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/symfony/routing"
+        }
+    ]
 }
 
