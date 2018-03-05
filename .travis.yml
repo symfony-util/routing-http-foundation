@@ -11,6 +11,10 @@ php:
 
 env:
   global:
+  - SYMFONY_DEV_BRANCH="4.1.x-dev"
+  - SYMFONY_CURRENT_BRANCH="4.0.x-dev"
+  - SYMFONY_LTS_BRANCH="3.4.x-dev"
+  - SYMFONY_OLTS_BRANCH="2.8.x-dev"
   - PATH=~/.composer/vendor/bin:vendor/bin:$PATH
   - TEST_LINT=`true`
 
@@ -19,10 +23,16 @@ matrix:
   include:
   - php: nightly
     env:
-    - SYMFONY_VERSION="^4.1@dev"
+    - SYMFONY_VERSION=$SYMFONY_DEV_BRANCH
   - php: nightly
     env:
-    - SYMFONY_VERSION="4.0.x-dev"
+    - SYMFONY_VERSION=$SYMFONY_CURRENT_BRANCH
+  - php: nightly
+    env:
+    - SYMFONY_VERSION=$SYMFONY_LTS_BRANCH
+  - php: nightly
+    env:
+    - SYMFONY_VERSION=$SYMFONY_OLTS_BRANCH
   - php: nightly
   - php: 7.2
   - php: 7.2
@@ -39,13 +49,16 @@ matrix:
     - SYMFONY_VERSION="2.3.*"
   - php: 7.1
     env:
-    - SYMFONY_VERSION="^4.1@dev"
+    - SYMFONY_VERSION=$SYMFONY_DEV_BRANCH
   - php: 7.1
     env:
-    - SYMFONY_VERSION="4.0.x-dev"
+    - SYMFONY_VERSION=$SYMFONY_CURRENT_BRANCH
   - php: 7.1
   - php: 7.0
   - php: 5.6
+  - php: 5.5
+    env:
+    - SYMFONY_VERSION=$SYMFONY_LTS_BRANCH
   - php: 5.5
   - php: 5.4 # Symfony 2.8
   - php: 5.4
@@ -54,6 +67,10 @@ matrix:
   - php: 5.4
     env:
     - SYMFONY_VERSION="2.3.*"
+  - php: 5.3
+    dist: precise
+    env:
+    - SYMFONY_VERSION=$SYMFONY_OLTS_BRANCH
   - php: 5.3 # Symfony 2.8. First PHP version with "composer"
     dist: precise
   - php: 5.3
@@ -68,9 +85,13 @@ matrix:
   - php: nightly
   - php: 5.3
   - env:
-    - SYMFONY_VERSION="^4.1@dev"
+    - SYMFONY_VERSION=$SYMFONY_DEV_BRANCH
   - env:
-    - SYMFONY_VERSION="4.0.x-dev"
+    - SYMFONY_VERSION=$SYMFONY_CURRENT_BRANCH
+  - env:
+    - SYMFONY_VERSION=$SYMFONY_LTS_BRANCH
+  - env:
+    - SYMFONY_VERSION=$SYMFONY_OLTS_BRANCH
   - env:
     - SYMFONY_VERSION="2.7.*" # https://github.com/symfony/symfony/issues/26315
   - env:
