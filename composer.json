@@ -8,6 +8,12 @@
         {"name": "Jean-bernard Addor"},
         {"name": "Community", "homepage": "https://github.com/symfony-util/routing-http-foundation"}
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/symfony/symfony"
+        }
+    ],
     "require": {
         "symfony/http-foundation": "^2.0 || ^3.0 || ^4.0",
         "symfony/routing": "^2.0 || ^3.0 || ^4.0",
@@ -25,20 +31,6 @@
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "symfony/symfony"
-        },
-        {
-            "type": "git",
-            "url": "symfony/http-foundation"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/symfony/routing"
-        }
-    ]
+    }
 }
 
