@@ -11,10 +11,10 @@ php:
 
 env:
   global:
-  - SYMFONY_DEV_BRANCH="4.1.x-dev"
-  - SYMFONY_CURRENT_BRANCH="4.0.x-dev"
-  - SYMFONY_LTS_BRANCH="3.4.x-dev"
-  - SYMFONY_OLTS_BRANCH="2.8.x-dev"
+  - SYMFONY_DEV_BRANCH="4.3.x-dev"
+  - SYMFONY_CURRENT_BRANCH="4.2.x" # -dev
+  - SYMFONY_LTS_BRANCH="3.4.x" # -dev
+  - SYMFONY_OLTS_BRANCH="2.8.x" # -dev
   - PATH=~/.composer/vendor/bin:vendor/bin:$PATH
   - TEST_LINT=`true`
 
@@ -34,6 +34,13 @@ matrix:
     env:
     - SYMFONY_VERSION=$SYMFONY_OLTS_BRANCH
   - php: nightly
+  - php: 7.3
+  - php: 7.3
+    env:
+    - SYMFONY_LTS="3"
+  - php: 7.3
+    env:
+    - SYMFONY_LTS="2"
   - php: 7.2
   - php: 7.2
     env:
@@ -83,6 +90,7 @@ matrix:
     - SYMFONY_VERSION="2.3.*"
   allow_failures:
   - php: nightly
+  - php: 7.3
   - php: 5.3
   - env:
     - SYMFONY_VERSION=$SYMFONY_DEV_BRANCH
