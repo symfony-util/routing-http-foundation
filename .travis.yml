@@ -90,7 +90,8 @@ matrix:
     - SYMFONY_VERSION="2.3.*"
   allow_failures:
   - php: nightly
-  - php: 7.3
+  - php: 7.4
+  - php: 5.4
   - php: 5.3
   - env:
     - SYMFONY_VERSION=$SYMFONY_DEV_BRANCH
